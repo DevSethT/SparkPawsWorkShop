@@ -1,5 +1,7 @@
 import "./ProjectsPage.css";
 import Header from "../../componates/Header/Header.jsx";
+import ProjectCard from "../../componates/ProjectCard/ProjectCard.jsx";
+import Projects from "../../utils/Projects.js";
 
 function ProjectsPage() {
   return (
@@ -11,6 +13,9 @@ function ProjectsPage() {
         </div>
         <div className="projectsPage__projectsList">
             {/* map projects from data saved */}
+            {Projects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+            ))}
         </div>
     </div>
   );
