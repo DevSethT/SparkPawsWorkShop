@@ -3,6 +3,9 @@ import './App.css'
 import HomePage from '../../Pages/HomePage/HomePage.jsx'
 import ProjectsPage from '../../Pages/ProjectsPage/PorjectsPage.jsx'
 import ProjectPage from '../../Pages/ProjectPage/ProjectPage.jsx'
+import InvatoryPage from '../../Pages/InvatoryPage/InvatoryPage.jsx'
+
+
 function App() {
   
 
@@ -12,6 +15,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/projects" element={<ProjectsPage />} />
       <Route path="/projects/:id" element={<ProjectPage />} />
+      <Route path="/invatory" element={<InvatoryPage />} />
     </Routes>
     </>
   )
