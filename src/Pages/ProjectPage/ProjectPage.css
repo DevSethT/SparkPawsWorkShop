@@ -79,6 +79,7 @@
 }
 
 .ProjectPage__Description,
+.projectPage__reason,
 .projectPage__Tools,
 .projectPage__Breakdown,
 .projectPage__TimeTaken {
@@ -87,6 +88,57 @@
   border: 1px solid rgba(26, 128, 188, 0.36);
   border-radius: 6px;
   background: rgba(223, 246, 255, 0.66);
+}
+
+.projectPage__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 34px;
+  margin: 4px 0 10px;
+  padding: 0 14px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.projectPage__status--done {
+  color: #17683a;
+  background: rgba(99, 220, 142, 0.28);
+}
+
+.projectPage__status--inProgress {
+  color: #7a5a00;
+  background: rgba(253, 198, 91, 0.38);
+}
+
+.projectPage__status--notStarted {
+  color: #0f4777;
+  background: rgba(111, 198, 255, 0.32);
+}
+
+.projectPage__backLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin: 0 0 16px;
+  padding: 0 16px;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  color: #0f4777;
+  background: linear-gradient(180deg, #ffffff, #dff6ff);
+  box-shadow: 0 0 0 4px rgba(26, 128, 188, 0.12), 0 10px 20px rgba(21, 71, 116, 0.18);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.projectPage__backLink:focus-visible {
+  outline: 3px solid #fdc65b;
+  outline-offset: 3px;
 }
 
 @media (max-width: 720px) {
