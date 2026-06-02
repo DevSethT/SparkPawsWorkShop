@@ -2,13 +2,15 @@ import "./ProjectCard.css";
 
 function ProjectCard({ project }) {
   return (
-    <div className="project-card">
-      <h2>{project.name}</h2>
-      <img src={project.images[0]} alt={`${project.name} image`} className="project-image" />
-      <p>Type: {project.TypeOfProject}</p>
-      <p>Status: {project.Status}</p>
-      <p>Reason for Disposal: {project.reasonForDesposal}</p>
-      <p>Description: {project.discription}</p>
+    <div className="projectCard">
+      <h2 className="projectCard__title">{project.name}</h2>
+      <div className="projectCard__image-container">
+        <img src={project.images[0]} alt={`${project.name} image`} className="projectCard__image" />
+      </div>
+      <p className="projectCard__type">Type: {project.TypeOfProject}</p>
+      <p className="projectCard__status">Status: {project.Status}</p>
+      <p className="projectCard__reason">Reason for Disposal: {project.reasonForDesposal}</p>
+      <p className="projectCard__description">Description: {project.discription}</p>
     </div>
   );
 }

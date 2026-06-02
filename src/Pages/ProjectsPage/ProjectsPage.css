@@ -1,0 +1,18 @@
+.projectsPage {
+}
+
+.projectsPage__top{
+
+}
+
+.projectsPage__addProjectBtn{
+    margin-bottom: 20px;
+}
+
+
+.projectsPage__projectsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}

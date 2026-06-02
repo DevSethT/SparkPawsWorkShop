@@ -9,7 +9,7 @@ function ProjectsPage() {
         <div className="projectsPage__top">
             <Header />    
         <h1>Projects Page</h1>
-        <button className="projectsPage__addProject">Add Project</button>
+        <button className="projectsPage__addProjectBtn">Add Project</button>
         </div>
         <div className="projectsPage__projectsList">
             {/* map projects from data saved */}
