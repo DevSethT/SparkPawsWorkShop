@@ -1,0 +1,92 @@
+.invatoryPage {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+  padding: 32px;
+  color: #f7fbff;
+  overflow: hidden;
+}
+
+.invatoryPage *,
+.invatoryPage *::before,
+.invatoryPage *::after {
+  box-sizing: inherit;
+}
+
+.invatoryPage::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(32deg, transparent 0 17%, rgba(255, 255, 255, 0.2) 17.1% 17.45%, transparent 17.55%),
+    radial-gradient(circle at 18% 28%, transparent 0 58px, rgba(255, 255, 255, 0.22) 59px 60px, transparent 61px),
+    radial-gradient(circle at 84% 22%, rgba(253, 198, 91, 0.13), transparent 14%);
+  pointer-events: none;
+}
+
+.invatoryPage > h1,
+.invatoryPageList {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.invatoryPage > h1 {
+  margin-top: 28px;
+  margin-bottom: 14px;
+  color: #ffffff;
+  font-size: clamp(2rem, 6vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+  text-shadow: 0 2px 0 rgba(21, 81, 132, 0.36);
+}
+
+.invatoryPage__add-btn {
+  position: relative;
+  z-index: 1;
+  display: block;
+  min-height: 44px;
+  margin: 0 auto 24px;
+  padding: 0 18px;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  color: #0f4777;
+  background: linear-gradient(180deg, #ffffff, #dff6ff);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.16), 0 10px 20px rgba(21, 71, 116, 0.22);
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 0;
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.invatoryPage__add-btn:hover {
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.22), 0 14px 24px rgba(21, 71, 116, 0.28);
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+.invatoryPage__add-btn:focus-visible {
+  outline: 3px solid #fdc65b;
+  outline-offset: 3px;
+}
+
+.invatoryPageList {
+  min-height: 220px;
+  padding: 22px;
+  border: 2px dashed rgba(255, 255, 255, 0.74);
+  border-radius: 8px;
+  background:
+    linear-gradient(rgba(26, 128, 188, 0.11) 1px, transparent 1px) 0 0 / 20px 20px,
+    linear-gradient(90deg, rgba(26, 128, 188, 0.11) 1px, transparent 1px) 0 0 / 20px 20px,
+    rgba(246, 252, 255, 0.86);
+  box-shadow: 0 16px 30px rgba(21, 71, 116, 0.2);
+}
+
+@media (max-width: 720px) {
+  .invatoryPage {
+    padding: 18px;
+  }
+}

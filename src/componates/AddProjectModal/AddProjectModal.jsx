@@ -4,7 +4,7 @@ function AddProjectModal({ onClose }) {
   return (
     <div className="addProjectModal">
         <div className="addProjectModal__content">
-<button type="button" onClick={onClose}>Cancel</button>
+<button className="addProjectModal__cancelBtn" type="button" onClick={onClose}>Cancel</button>
             <h2>Add New Project</h2>
             <form className="addProjectModal__form">
                 <label>

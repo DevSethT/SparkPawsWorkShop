@@ -1,0 +1,28 @@
+html {
+  min-height: 100%;
+  background: #1f7fbc;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  color: #143b5b;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(135deg, #11619b 0%, #1f7fbc 46%, #35a1cf 100%);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}

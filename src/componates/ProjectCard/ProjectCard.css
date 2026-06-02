@@ -6,6 +6,11 @@
 
 }
 
+.projectCard__details{
+    display: flex;
+    justify-content: space-between;
+}
+
 .projectCard__image-container {
 
 }

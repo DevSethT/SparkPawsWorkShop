@@ -1,18 +1,226 @@
-.projectsPage {
+.projects-page {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 100vh;
+  padding: 32px;
+  color: #f7fbff;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px) 0 0 / 24px 24px,
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px) 0 0 / 120px 120px,
+    linear-gradient(135deg, #11619b 0%, #1f7fbc 46%, #35a1cf 100%);
+  overflow: hidden;
 }
 
-.projectsPage__top{
-
+.projects-page *,
+.projects-page *::before,
+.projects-page *::after {
+  box-sizing: inherit;
 }
 
-.projectsPage__addProjectBtn{
-    margin-bottom: 20px;
+.projects-page::before,
+.projects-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
 }
 
+.projects-page::before {
+  background:
+    linear-gradient(32deg, transparent 0 17%, rgba(255, 255, 255, 0.22) 17.1% 17.45%, transparent 17.55%),
+    linear-gradient(146deg, transparent 0 72%, rgba(205, 243, 255, 0.22) 72.1% 72.45%, transparent 72.55%),
+    radial-gradient(circle at 18% 28%, transparent 0 58px, rgba(255, 255, 255, 0.22) 59px 60px, transparent 61px),
+    radial-gradient(circle at 82% 76%, transparent 0 84px, rgba(255, 255, 255, 0.18) 85px 86px, transparent 87px);
+  opacity: 0.9;
+}
+
+.projects-page::after {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 255, 255, 0.22), transparent 18%),
+    radial-gradient(circle at 84% 26%, rgba(253, 198, 91, 0.16), transparent 14%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 30%);
+}
+
+.projectsPage__top {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto 28px;
+  padding: 22px;
+  border: 2px solid rgba(246, 252, 255, 0.72);
+  border-radius: 8px;
+  color: #f7fbff;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.13) 1px, transparent 1px) 0 0 / 18px 18px,
+    linear-gradient(90deg, rgba(255, 255, 255, 0.13) 1px, transparent 1px) 0 0 / 18px 18px,
+    rgba(12, 93, 149, 0.76);
+  box-shadow:
+    0 18px 36px rgba(21, 71, 116, 0.2),
+    inset 0 0 0 1px rgba(18, 74, 122, 0.22);
+}
+
+.projectsPage__top h1 {
+  margin: 18px 0 14px;
+  color: #ffffff;
+  font-size: clamp(2rem, 6vw, 4.4rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-shadow: 0 2px 0 rgba(21, 81, 132, 0.4);
+}
+
+.projectsPage__addProjectBtn {
+  min-height: 44px;
+  margin-bottom: 0;
+  padding: 0 18px;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  color: #0f4777;
+  background: linear-gradient(180deg, #ffffff, #dff6ff);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.16), 0 10px 20px rgba(21, 71, 116, 0.22);
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 0;
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.projectsPage__addProjectBtn:hover {
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.22), 0 14px 24px rgba(21, 71, 116, 0.28);
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+.projectsPage__addProjectBtn:focus-visible {
+  outline: 3px solid #fdc65b;
+  outline-offset: 3px;
+}
 
 .projectsPage__projectsList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 290px), 1fr));
+  align-items: stretch;
+  gap: 28px;
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.projects-page .projectCard {
+  position: relative;
+  min-width: 0;
+  min-height: 100%;
+  padding: 18px 18px 72px;
+  border: 2px solid rgba(255, 255, 255, 0.76);
+  border-radius: 8px;
+  color: #143b5b;
+  background:
+    linear-gradient(rgba(26, 128, 188, 0.11) 1px, transparent 1px) 0 0 / 20px 20px,
+    linear-gradient(90deg, rgba(26, 128, 188, 0.11) 1px, transparent 1px) 0 0 / 20px 20px,
+    rgba(246, 252, 255, 0.91);
+  box-shadow:
+    0 16px 30px rgba(21, 71, 116, 0.2),
+    inset 0 0 0 1px rgba(26, 94, 150, 0.12);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+
+.projects-page .projectCard::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed rgba(26, 128, 188, 0.38);
+  border-radius: 6px;
+  background:
+    linear-gradient(35deg, transparent 0 38%, rgba(26, 128, 188, 0.22) 38.2% 38.8%, transparent 39%),
+    linear-gradient(145deg, transparent 0 72%, rgba(26, 128, 188, 0.18) 72.2% 72.8%, transparent 73%);
+  pointer-events: none;
+}
+
+.projects-page .projectCard::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 52px;
+  height: 38px;
+  border: 2px solid rgba(26, 128, 188, 0.58);
+  border-radius: 5px;
+  background:
+    linear-gradient(90deg, transparent 0 31%, rgba(26, 128, 188, 0.28) 31% 34%, transparent 34% 64%, rgba(26, 128, 188, 0.28) 64% 67%, transparent 67%),
+    linear-gradient(0deg, transparent 0 46%, rgba(253, 198, 91, 0.58) 46% 54%, transparent 54%),
+    rgba(255, 255, 255, 0.56);
+  box-shadow: 0 0 0 4px rgba(26, 128, 188, 0.08);
+  pointer-events: none;
+}
+
+.projects-page .projectCard > * {
+  position: relative;
+  z-index: 1;
+}
+
+.projects-page .projectCard__title {
+  margin: 0 0 14px;
+  color: #0f4777;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.projects-page .projectCard__image-container {
+  aspect-ratio: 16 / 10;
+  margin-bottom: 14px;
+  border: 2px solid rgba(26, 128, 188, 0.36);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.58);
+  overflow: hidden;
+}
+
+.projects-page .projectCard__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projects-page .projectCard p {
+  max-width: 100%;
+  margin: 9px 0;
+  color: #214d69;
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.projects-page .projectCard__type,
+.projects-page .projectCard__status {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-right: 8px;
+  padding: 5px 8px;
+  border: 1px solid rgba(26, 128, 188, 0.36);
+  border-radius: 5px;
+  color: #0f4777;
+  background: rgba(223, 246, 255, 0.76);
+}
+
+.projects-page .projectCard__description {
+  color: #123f61;
+}
+
+@media (max-width: 720px) {
+  .projects-page {
+    padding: 18px;
+  }
+
+  .projectsPage__top {
+    padding: 18px;
+  }
+
+  .projectsPage__projectsList {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
 }
