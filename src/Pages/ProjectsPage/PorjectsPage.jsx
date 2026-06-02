@@ -2,6 +2,7 @@ import "./ProjectsPage.css";
 import Header from "../../componates/Header/Header.jsx";
 import ProjectCard from "../../componates/ProjectCard/ProjectCard.jsx";
 import Projects from "../../utils/Projects.js";
+import AddProjectModal from "../../componates/AddProjectModal/AddProjectModal.jsx";
 
 function ProjectsPage() {
   return (
@@ -17,6 +18,7 @@ function ProjectsPage() {
                 <ProjectCard key={project.id} project={project} />
             ))}
         </div>
+        <AddProjectModal />
     </div>
   );
 }
