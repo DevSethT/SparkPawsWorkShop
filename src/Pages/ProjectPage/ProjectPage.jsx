@@ -5,7 +5,8 @@ import Projects from "../../utils/Projects.js";
 
 function ProjectPage() {
   const { id } = useParams();
-  const project = Projects.find((project) => project.id === Number(id));
+ const storedProjects = JSON.parse(localStorage.getItem("projects")) || Projects;
+const project = storedProjects.find((project) => project.id === Number(id));
 
   function getStatusClassName(status) {
     const normalizedStatus = status.toLowerCase().replace(/\s+/g, "-");
@@ -65,6 +66,8 @@ function ProjectPage() {
         <h2>Time Taken:</h2>
         <p className="projectPage__time-taken-text">{project.TimeTook}</p>
       </div>
+      {/* make a edit project button */}
+      
     </div>
     </>
   );

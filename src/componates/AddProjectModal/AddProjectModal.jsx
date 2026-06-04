@@ -1,12 +1,33 @@
 import "./AddProjectModal.css";
 
-function AddProjectModal({ onClose }) {
+function AddProjectModal({ onClose, onAddProject }) {
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+        const newProject = {
+            id: Date.now(),
+            name: formData.get("projectName"),
+            TypeOfProject: formData.get("projectType"),
+            Status: formData.get("projectStatus"),
+            ToolsUsed: formData.get("toolsUsed"),
+            timeTook: formData.get("timeTook"),
+            reasonForDesposal: formData.get("reasonForDisposal"),
+            breakdownSteps: formData.get("breakdownSteps"),
+            discription: formData.get("description"),
+            images: [] // You can add logic to handle image uploads if needed
+        };
+        onAddProject(newProject);
+    }
+
+
+
   return (
     <div className="addProjectModal">
         <div className="addProjectModal__content">
 <button className="addProjectModal__cancelBtn" type="button" onClick={onClose}>Cancel</button>
             <h2>Add New Project</h2>
-            <form className="addProjectModal__form">
+            <form className="addProjectModal__form" onSubmit={handleSubmit}>
                 <label>
                     Project Name:
                     <input type="text" name="projectName" required />

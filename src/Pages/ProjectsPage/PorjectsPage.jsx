@@ -1,5 +1,5 @@
 import "./ProjectsPage.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../../componates/Header/Header.jsx";
 import ProjectCard from "../../componates/ProjectCard/ProjectCard.jsx";
 import Projects from "../../utils/Projects.js";
@@ -7,6 +7,16 @@ import AddProjectModal from "../../componates/AddProjectModal/AddProjectModal.js
 
 function ProjectsPage() {
   const [isAddProjectModalOpen, setIsAddProjectModalOpen] = useState(false);
+  const [projects, setProjects] = useState(() => {
+    const storedProjects = JSON.parse(localStorage.getItem("projects"));
+    return storedProjects || Projects;
+  });
+
+
+  useEffect(() => {
+    localStorage.setItem("projects", JSON.stringify(projects));
+  }, [projects]);
+
 
   function openAddProjectModal() {
     setIsAddProjectModalOpen(true);
@@ -15,6 +25,12 @@ function ProjectsPage() {
   function closeAddProjectModal() {
     setIsAddProjectModalOpen(false);
   }
+  
+  function addProject(newProject) {
+    setProjects((prevProjects) => [newProject, ...prevProjects]);
+    closeAddProjectModal();
+  }
+
 
   return (
     <div className="projects-page">
@@ -25,11 +41,11 @@ function ProjectsPage() {
         </div>
         <div className="projectsPage__projectsList">
             {/* map projects from data saved */}
-            {Projects.map((project) => (
+            {projects.map((project) => (
                 <ProjectCard key={project.id} project={project} />
             ))}
         </div>
-        {isAddProjectModalOpen && <AddProjectModal onClose={closeAddProjectModal} />}
+        {isAddProjectModalOpen && <AddProjectModal onClose={closeAddProjectModal} onAddProject={addProject} />}
     </div>
   );
 }
