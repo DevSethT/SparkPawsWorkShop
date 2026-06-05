@@ -11,9 +11,9 @@ function AddProjectModal({ onClose, onAddProject }) {
             TypeOfProject: formData.get("projectType"),
             Status: formData.get("projectStatus"),
             ToolsUsed: formData.get("toolsUsed"),
-            timeTook: formData.get("timeTook"),
+            TimeTook: formData.get("TimeTook"),
             reasonForDesposal: formData.get("reasonForDisposal"),
-            breakdownSteps: formData.get("breakdownSteps"),
+            BreakdownSteps: formData.get("BreakdownSteps"),
             discription: formData.get("description"),
             images: [] // You can add logic to handle image uploads if needed
         };
@@ -56,7 +56,7 @@ function AddProjectModal({ onClose, onAddProject }) {
                 </label>
                 <label>
                     Time Took:
-                    <input type="text" name="timeTook" required />
+                    <input type="text" name="TimeTook" required />
                 </label>
                 <label>
                     Reason for Disposal:
@@ -64,7 +64,7 @@ function AddProjectModal({ onClose, onAddProject }) {
                 </label>
                 <label>
                     Breakdown Steps:
-                    <textarea name="breakdownSteps" required></textarea>
+                    <textarea name="BreakdownSteps" required></textarea>
                 </label>
                 <label>
                     Description:

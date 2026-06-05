@@ -120,23 +120,111 @@
   background: rgba(111, 198, 255, 0.32);
 }
 
-.projectPage__backLink {
+.projectPage__backLink,
+.projectPage__editBtn,
+.projectPage__editActions button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 42px;
-  margin: 0 0 16px;
   padding: 0 16px;
   border: 2px solid #ffffff;
   border-radius: 6px;
+  cursor: pointer;
   color: #0f4777;
   background: linear-gradient(180deg, #ffffff, #dff6ff);
   box-shadow: 0 0 0 4px rgba(26, 128, 188, 0.12), 0 10px 20px rgba(21, 71, 116, 0.18);
+  font: inherit;
   font-weight: 800;
   text-decoration: none;
 }
 
-.projectPage__backLink:focus-visible {
+.projectPage__backLink {
+  margin: 0 12px 16px 0;
+}
+
+.projectPage__editBtn {
+  margin: 0 0 16px;
+}
+
+.projectPage__editForm {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0 0 18px;
+  padding: 16px;
+  border: 1px solid rgba(26, 128, 188, 0.36);
+  border-radius: 6px;
+  background: rgba(223, 246, 255, 0.66);
+}
+
+.projectPage__editForm label {
+  display: grid;
+  gap: 7px;
+  color: #214d69;
+  font-size: 0.92rem;
+  font-weight: 800;
+}
+
+.projectPage__editForm label:has(textarea),
+.projectPage__editForm label:last-of-type,
+.projectPage__editActions {
+  grid-column: 1 / -1;
+}
+
+.projectPage__editForm input,
+.projectPage__editForm select,
+.projectPage__editForm textarea {
+  width: 100%;
+  min-height: 42px;
+  border: 2px solid rgba(26, 128, 188, 0.34);
+  border-radius: 6px;
+  color: #143b5b;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.72);
+  font: inherit;
+}
+
+.projectPage__editForm input,
+.projectPage__editForm select {
+  padding: 0 11px;
+}
+
+.projectPage__editForm textarea {
+  min-height: 88px;
+  padding: 10px 11px;
+  resize: vertical;
+}
+
+.projectPage__editForm input:focus,
+.projectPage__editForm select:focus,
+.projectPage__editForm textarea:focus {
+  border-color: #0f76b3;
+  outline: 3px solid rgba(253, 198, 91, 0.38);
+  outline-offset: 1px;
+}
+
+.projectPage__editActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.projectPage__editActions button[type="button"] {
+  color: #f7fbff;
+  background: linear-gradient(180deg, #235d88, #15486f);
+}
+
+.projectPage__backLink:hover,
+.projectPage__editBtn:hover,
+.projectPage__editActions button:hover {
+  filter: brightness(1.04);
+  transform: translateY(-1px);
+}
+
+.projectPage__backLink:focus-visible,
+.projectPage__editBtn:focus-visible,
+.projectPage__editActions button:focus-visible {
   outline: 3px solid #fdc65b;
   outline-offset: 3px;
 }
@@ -146,5 +234,16 @@
     width: calc(100% - 36px);
     margin-top: 18px;
     padding: 18px;
+  }
+
+  .projectPage__editForm {
+    grid-template-columns: 1fr;
+  }
+
+  .projectPage__backLink,
+  .projectPage__editBtn,
+  .projectPage__editActions button {
+    width: 100%;
+    margin-right: 0;
   }
 }
