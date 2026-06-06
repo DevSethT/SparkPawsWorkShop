@@ -1,0 +1,108 @@
+.itemCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 190px;
+  padding: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.76);
+  border-radius: 8px;
+  color: #143b5b;
+  background:
+    linear-gradient(rgba(26, 128, 188, 0.11) 1px, transparent 1px) 0 0 / 20px 20px,
+    linear-gradient(90deg, rgba(26, 128, 188, 0.11) 1px, transparent 1px) 0 0 / 20px 20px,
+    rgba(246, 252, 255, 0.91);
+  box-shadow:
+    0 16px 30px rgba(21, 71, 116, 0.2),
+    inset 0 0 0 1px rgba(26, 94, 150, 0.12);
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  text-align: left;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.itemCard::before {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border: 1px dashed rgba(26, 128, 188, 0.38);
+  border-radius: 6px;
+  background:
+    linear-gradient(35deg, transparent 0 38%, rgba(26, 128, 188, 0.16) 38.2% 38.8%, transparent 39%);
+  pointer-events: none;
+}
+
+.itemCard::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fdc65b;
+  box-shadow: 0 0 0 4px rgba(253, 198, 91, 0.22);
+  pointer-events: none;
+}
+
+.itemCard > * {
+  position: relative;
+  z-index: 1;
+}
+
+.itemCard:hover {
+  box-shadow:
+    0 20px 34px rgba(21, 71, 116, 0.26),
+    inset 0 0 0 1px rgba(26, 94, 150, 0.12);
+  filter: brightness(1.02);
+  transform: translateY(-2px);
+}
+
+.itemCard:focus-visible {
+  outline: 3px solid #fdc65b;
+  outline-offset: 4px;
+}
+
+.itemCard__title {
+  margin: 0 22px 14px 0;
+  color: #0f4777;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.itemCard__details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.itemCard__quantity,
+.itemCard__category {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0;
+  padding: 5px 8px;
+  border: 1px solid rgba(26, 128, 188, 0.36);
+  border-radius: 5px;
+  color: #0f4777;
+  background: rgba(223, 246, 255, 0.76);
+  font-size: 0.88rem;
+  line-height: 1.35;
+}
+
+.itemCard__description {
+  display: -webkit-box;
+  flex: 1;
+  margin: 0;
+  color: #123f61;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
