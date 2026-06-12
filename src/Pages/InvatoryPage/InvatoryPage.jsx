@@ -36,7 +36,7 @@ function addItem(newItem) {
     <div className="invatoryPage">
         <div className="invatoryPage__top">
         <Header />
-        <h1>Invatory Page</h1>
+        <h1>Inventory Page</h1>
         <button className="invatoryPage__add-btn" onClick={openAddItemModal}>
           Add Item
         </button>
