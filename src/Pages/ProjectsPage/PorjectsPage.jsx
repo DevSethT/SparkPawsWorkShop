@@ -9,7 +9,7 @@ function ProjectsPage() {
   const [isAddProjectModalOpen, setIsAddProjectModalOpen] = useState(false);
   const [projects, setProjects] = useState(() => {
     const storedProjects = JSON.parse(localStorage.getItem("projects"));
-    return storedProjects || Projects;
+    return Array.isArray(storedProjects) && storedProjects.length > 0 ? storedProjects : Projects;
   });
 
 
