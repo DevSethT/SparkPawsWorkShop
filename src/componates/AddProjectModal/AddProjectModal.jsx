@@ -14,8 +14,8 @@ function AddProjectModal({ onClose, onAddProject }) {
             TimeTook: formData.get("TimeTook"),
             reasonForDesposal: formData.get("reasonForDisposal"),
             BreakdownSteps: formData.get("BreakdownSteps"),
-            discription: formData.get("description"),
-            images: [] // You can add logic to handle image uploads if needed
+            description: formData.get("description"),
+            image: formData.get("projectImage"),
         };
         onAddProject(newProject);
     }
@@ -31,6 +31,10 @@ function AddProjectModal({ onClose, onAddProject }) {
                 <label>
                     Project Name:
                     <input type="text" name="projectName" required />
+                </label>
+                <label>
+                    Project Image:
+                    <input type="link" name="projectImage" placeholder="Enter image URL" />
                 </label>
                 <label>
                     Type of Project:
@@ -52,11 +56,11 @@ function AddProjectModal({ onClose, onAddProject }) {
                 </label>
                 <label>
                     Tools Used:
-                    <input type="text" name="toolsUsed" required />
+                    <input type="text" name="toolsUsed" />
                 </label>
                 <label>
                     Time Took:
-                    <input type="text" name="TimeTook" required />
+                    <input type="text" name="TimeTook" />
                 </label>
                 <label>
                     Reason for Disposal:
@@ -64,11 +68,11 @@ function AddProjectModal({ onClose, onAddProject }) {
                 </label>
                 <label>
                     Breakdown Steps:
-                    <textarea name="BreakdownSteps" required></textarea>
+                    <textarea name="BreakdownSteps"></textarea>
                 </label>
                 <label>
                     Description:
-                    <textarea name="description" required></textarea>
+                    <textarea name="description" required placeholder="Enter project description"></textarea>
                 </label>
                 <button type="submit">Add Project</button>
             </form>

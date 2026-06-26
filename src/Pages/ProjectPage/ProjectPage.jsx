@@ -90,6 +90,10 @@ function ProjectPage() {
             <input type="text" name="name" value={editProject.name ?? ""} onChange={handleEditProjectChange} required />
           </label>
           <label>
+            Project Image:
+            <input type="link" name="projectImage" value={editProject.image ?? ""} onChange={handleEditProjectChange}  />
+          </label>
+          <label>
             Type of Project:
             <select name="TypeOfProject" value={editProject.TypeOfProject ?? ""} onChange={handleEditProjectChange} required>
               <option value="">Select a type</option>
@@ -134,7 +138,7 @@ function ProjectPage() {
         </form>
       )}
       <div className="projectPage__image-container">
-        <img src={project.images[0]} alt={project.name} className="projectPage__image" />
+        <img src={project.image} alt={project.name} className="projectPage__image" />
       </div>
       <div className="projectHeader">
       <h1>{project.name}</h1>

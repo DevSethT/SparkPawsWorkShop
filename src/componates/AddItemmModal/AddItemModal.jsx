@@ -11,7 +11,7 @@ function AddItemModal({ onClose, onAddItem }) {
             name: formData.get("itemName"),
             category: formData.get("itemCategory"),
             quantity: formData.get("itemQuantity"),
-            images: [] // You can add logic to handle image uploads if needed
+            image: formData.get("itemImage"),
         };
         onAddItem(newItem);
     }
@@ -28,6 +28,10 @@ function AddItemModal({ onClose, onAddItem }) {
                     <label>
                         Item Name:
                         <input type="text" name="itemName" required placeholder="Enter item name" />
+                    </label>
+                    <label>
+                        Item Image:
+                        <input type="link" name="itemImage" placeholder="Enter image URL" />
                     </label>
                     <label>
                         Category:
