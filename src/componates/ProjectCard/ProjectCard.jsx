@@ -6,11 +6,7 @@ function ProjectCard({ project }) {
     <Link className="projectCard" to={`/projects/${project.id}`}>
       <h2 className="projectCard__title">{project.name}</h2>
       <div className="projectCard__image-container">
-      {project.images?.[0] ? (
-  <img src={project.images[0]} alt={project.name} />
-) : (
-  <p>No image yet</p>
-)}
+        {/* <img src={project.images[0] || ""} alt={`${project.name} image`} className="projectCard__image" /> */}
       </div>
       <div className="projectCard__details">
       <p className="projectCard__type">Type: {project.TypeOfProject}</p>
