@@ -3,9 +3,10 @@ import Header from "../../componates/Header/Header.jsx";
 
 function HomePage() {
   return (
-    <div className="home-page">
+    <div className="homePage">
         <Header />
-      <h1>Welcome to SparkPaws Workshop!</h1>
+      <h1 className="welcome-heading">Welcome to SparkPaws Workshop!</h1>
+      
     </div>
   );
 }
