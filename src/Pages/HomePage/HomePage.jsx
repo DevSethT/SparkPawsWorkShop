@@ -13,7 +13,7 @@ function HomePage() {
         </div>
         <div className="homePageBtns">
           <p className="HomePageBtnstext">Want to have a look around? here is a few good places to start!</p>
-          <Link to="/repairs"><button>Repairs</button></Link>
+          <Link to="/teardown&repair"><button>Repairs</button></Link>
           <Link to="/coding"><button>Coding</button></Link>
           <Link to="/homelab"><button>Homelab</button></Link>
         </div>

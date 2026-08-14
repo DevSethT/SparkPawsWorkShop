@@ -5,6 +5,7 @@ function CodingPage(){
     return(
     <>
       <Header />
+      <h1>Coding Page</h1>
     </>
   )
 }
